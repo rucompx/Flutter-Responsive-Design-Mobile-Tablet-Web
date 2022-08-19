@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_design/responsive/desktop-scaffold.dart';
+import 'package:responsive_design/responsive/mobile-scaffold.dart';
+
+import 'package:responsive_design/responsive/responsive-layout.dart';
+import 'package:responsive_design/responsive/tablet-scaffold.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +20,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Scaffold());
+        home: ResponsiveLayout(
+          mobile: MobileScaffold(),
+          desktop: DesktopScaffold(),
+          tablet: TabletScaffold(),
+        ));
   }
 }
